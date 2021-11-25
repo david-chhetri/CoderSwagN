@@ -13,10 +13,7 @@ import com.foo.coderswagn.R
 /**
  * Created by David Chhetri on 23,November,2021
  */
-class CategoryAdapter(context: Context, categories: List<Category>): BaseAdapter() {
-
-    val context = context
-    val categories = categories
+class CategoryAdapter(val context: Context, val categories: List<Category>): BaseAdapter() {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val categoryView: View

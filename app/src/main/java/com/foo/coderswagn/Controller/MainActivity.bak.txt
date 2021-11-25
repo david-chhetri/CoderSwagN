@@ -3,11 +3,8 @@ package com.foo.coderswagn.Controller
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.foo.coderswagn.Adapters.CategoryAdapter
-import com.foo.coderswagn.Adapters.CategoryRecycleAdapter
 import com.foo.coderswagn.Model.Category
 import com.foo.coderswagn.R
 import com.foo.coderswagn.Services.DataService
@@ -28,19 +25,15 @@ class MainActivity : AppCompatActivity() {
         categoryListView.adapter = adapter
     }*/
 
-    lateinit var adapter : CategoryRecycleAdapter
+    lateinit var adapter : CategoryAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        adapter = CategoryRecycleAdapter(this,DataService.categories)
+        adapter = CategoryAdapter(this,DataService.categories)
 
         categoryListView.adapter = adapter
-
-        val layoutManager = LinearLayoutManager(this)
-        categoryListView.layoutManager = layoutManager
-        categoryListView.setHasFixedSize(true)
 
 /*        categoryListView.setOnItemClickListener{adapterView,view,i,l ->
             val category = DataService.categories[i]
