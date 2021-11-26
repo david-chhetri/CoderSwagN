@@ -13,7 +13,7 @@ import com.foo.coderswagn.R
 /**
  * Created by David Chhetri on 23,November,2021
  */
-class CategoryRecycleAdapter(val context: Context, val categories: List<Category>, val itemClick: (Category) -> Unit) : RecyclerView.Adapter<CategoryRecycleAdapter.Holder>() {
+class CategoryRecycleAdapter(val context: Context, val categories: List<Category>) : RecyclerView.Adapter<CategoryRecycleAdapter.Holder>() {
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder?.bindCategory(categories[position], context)
@@ -30,11 +30,11 @@ class CategoryRecycleAdapter(val context: Context, val categories: List<Category
         val view = LayoutInflater.from(context)
             .inflate(R.layout.category_list_item, parent,false)
 
-        return Holder(view, itemClick)
+        return Holder(view)
 
     }
 
-    inner class Holder(itemView: View, val itemClick: (Category) -> Unit) : RecyclerView.ViewHolder(itemView) {
+    inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         //bindings happens in the Holder class
         //get reference to the UI element and then we bind the data
         val categoryImage = itemView?.findViewById<ImageView>(R.id.categoryImage)
@@ -45,8 +45,6 @@ class CategoryRecycleAdapter(val context: Context, val categories: List<Category
             val  resourceId = context.resources.getIdentifier(category.image, "drawable",context.packageName)
             categoryImage?.setImageResource(resourceId)
             categoryName?.text = category.title
-
-            itemView.setOnClickListener{ itemClick(category)}
         }
 
     }
