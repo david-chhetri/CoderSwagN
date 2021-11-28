@@ -38,7 +38,11 @@ dependencies {
     //keep this appcompat otherwise resource linking compile time error - David C
     implementation "androidx.appcompat:appcompat:1.0.2"
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    //implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+
+    //keep this constraintLayout:1.1.3 do not upgrade to 2.1.2 otherwise
+    //preview will not work - David C
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     androidTestImplementation "androidx.annotation:annotation:1.0.0"
     androidTestImplementation 'androidx.test:runner:1.1.0'
