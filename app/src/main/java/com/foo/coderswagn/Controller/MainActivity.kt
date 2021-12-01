@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.foo.coderswagn.Adapters.CategoryAdapter
 import com.foo.coderswagn.Adapters.CategoryRecycleAdapter
 import com.foo.coderswagn.Model.Category
