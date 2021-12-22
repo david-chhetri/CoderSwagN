@@ -18,6 +18,7 @@ class ProductsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_products)
+        val intent = this.intent
 
         val categoryType = intent.getStringExtra(EXTRA_CATEGORY)
         adapter = ProductsAdapter(this, DataService.getProducts(categoryType))
